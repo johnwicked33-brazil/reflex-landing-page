@@ -1,0 +1,27 @@
+.container {
+  display: block;
+  width: 100%;
+}
+
+.viewport {
+  align-items: center;
+  display: flex;
+  height: 1.14em;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.word {
+  display: flex;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
+
+.char {
+  display: inline-block;
+}
