@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ThemeProvider } from "@/components/theme-provider";
+import { absoluteUrl, SEO, SITE_ORIGIN } from "@/lib/seo";
 
 import "./globals.css";
 
@@ -63,18 +65,79 @@ const gladiaMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Gladia | AI Audio Infrastructure for Voice Products",
-  description:
-    "Local editable clone of the Gladia homepage with real assets, typography, and section structure.",
+  metadataBase: SITE_ORIGIN,
+  applicationName: SEO.brandName,
+  title: {
+    default: SEO.title,
+    template: `%s | ${SEO.brandName}`,
+  },
+  description: SEO.description,
+  keywords: [...SEO.keywords],
+  authors: [{ name: SEO.author }],
+  creator: SEO.author,
+  publisher: SEO.author,
+  category: SEO.category,
+  alternates: {
+    canonical: SEO.canonicalPath,
+    languages: {
+      "pt-BR": SEO.canonicalPath,
+    },
+  },
   icons: {
     icon: "/gladia/assets/66d1739eb3d771283bb9e675_favicon.png",
     apple: "/gladia/assets/66d173a496aae98d99f630a0_webclip.png",
   },
+  manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "Gladia | AI Audio Infrastructure for Voice Products",
-    description:
-      "Local editable clone of the Gladia homepage with real assets, typography, and section structure.",
+    title: SEO.title,
+    description: SEO.description,
+    url: absoluteUrl(),
+    siteName: SEO.brandName,
+    locale: SEO.locale,
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: SEO.imageAlt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SEO.title,
+    description: SEO.description,
+    images: [
+      {
+        url: "/twitter-image",
+        alt: SEO.imageAlt,
+      },
+    ],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    address: false,
+    email: false,
+    telephone: false,
+  },
+  other: {
+    audience: "business",
+    coverage: SEO.market,
+    distribution: "global",
+    "geo.country": "BR",
+    "geo.placename": SEO.market,
+    "geo.region": "BR",
   },
 };
 
@@ -85,10 +148,15 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="pt-BR"
       className={`${gladiaSans.variable} ${gladiaMono.variable} h-full scroll-smooth`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

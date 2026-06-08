@@ -57,6 +57,13 @@
   color: #0d0d0d;
 }
 
+.navAction,
+.navActionDark,
+.navActionLight {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
 .heroPrimaryAction {
   background: #fff;
   border: 1px solid #fff;
@@ -80,9 +87,10 @@
 }
 
 .heroSection {
+  --hero-fade-height: 128px;
   isolation: isolate;
-  min-height: max(860px, 100vh);
-  overflow: hidden;
+  min-height: clamp(760px, 92vh, 900px);
+  overflow: visible;
   padding-bottom: 0;
   position: relative;
 }
@@ -125,6 +133,19 @@
   width: auto;
 }
 
+.brandWordmark,
+.footerWordmark {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.footerWordmark {
+  font-size: 24px;
+}
+
 .navLinks {
   align-items: center;
   display: flex;
@@ -156,12 +177,35 @@
   gap: 12px;
 }
 
+.navActions {
+  flex-wrap: nowrap;
+}
+
 .heroBackdrop,
 .heroOverlay,
 .heroBottomFade {
-  inset: 0;
   pointer-events: none;
   position: absolute;
+}
+
+.heroBackdrop,
+.heroOverlay {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) calc(100% - var(--hero-fade-height)),
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 1) calc(100% - var(--hero-fade-height)),
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .heroBackdrop {
@@ -188,16 +232,7 @@
 }
 
 .heroBottomFade {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.18) 42%,
-    rgba(0, 0, 0, 0.4) 74%,
-    rgba(0, 0, 0, 0.68) 100%
-  );
-  inset: auto 0 0;
-  height: clamp(120px, 14vw, 220px);
-  z-index: 0;
+  display: none;
 }
 
 .heroContent {
@@ -206,7 +241,7 @@
   flex-direction: column;
   margin: 0 auto;
   max-width: 1248px;
-  padding: 84px 24px clamp(120px, 15vh, 180px);
+  padding: 56px 24px clamp(120px, 15vh, 180px);
   position: relative;
   z-index: 1;
 }
@@ -256,28 +291,6 @@
   width: 100%;
 }
 
-.heroTitleOrb {
-  background:
-    radial-gradient(
-      58% 76% at 50% 50%,
-      rgba(193, 149, 255, 0.48) 0%,
-      rgba(129, 109, 255, 0.34) 46%,
-      rgba(98, 196, 255, 0.24) 70%,
-      rgba(98, 196, 255, 0) 100%
-    );
-  border-radius: 999px;
-  filter: blur(22px);
-  height: 300px;
-  left: 50%;
-  opacity: 0.92;
-  pointer-events: none;
-  position: absolute;
-  top: 22px;
-  transform: translateX(-50%);
-  width: min(1320px, 122%);
-  z-index: 0;
-}
-
 .heroTitle {
   color: #fff;
   display: flex;
@@ -287,6 +300,7 @@
   position: relative;
   text-align: center;
   text-wrap: balance;
+  width: 100%;
   z-index: 1;
 }
 
@@ -391,12 +405,15 @@
 }
 
 .trustedLabel {
-  color: #8e8d91;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 1.7;
-  margin: 0 0 32px;
+  color: #fff;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.08;
+  margin: 0 auto 38px;
+  max-width: 780px;
   text-align: center;
+  text-wrap: balance;
 }
 
 .trustedLabel strong {
@@ -406,8 +423,8 @@
 
 .trustedShell {
   margin: 0 auto;
-  max-width: 1000px;
-  min-height: 90px;
+  max-width: 1120px;
+  min-height: 104px;
   overflow: hidden;
   position: relative;
 }
@@ -434,24 +451,33 @@
 
 .trustedTrack {
   align-items: center;
-  background: rgba(0, 0, 0, 0.68);
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  background: rgba(0, 0, 0, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-sizing: border-box;
   display: flex;
-  gap: 72px;
-  height: 90px;
-  justify-content: flex-start;
-  padding: 0 88px 0 84px;
-  transform: translateX(-88px);
-  width: 1000px;
+  flex-wrap: wrap;
+  gap: 34px 42px;
+  justify-content: center;
+  min-height: 104px;
+  padding: 28px 34px;
+  width: 100%;
 }
 
 .trustedLogo {
   align-items: center;
   display: flex;
   flex: 0 0 auto;
-  height: 90px;
+  height: 40px;
   justify-content: center;
-  width: 140px;
+  opacity: 0.9;
+  width: clamp(112px, 12vw, 150px);
+}
+
+.trustedLogo svg {
+  display: block;
+  height: auto;
+  max-height: 40px;
+  width: 100%;
 }
 
 .trustedLogoImage {
@@ -470,8 +496,9 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
   text-align: center;
+  width: 100%;
 }
 
 .problemTitle,
@@ -480,16 +507,197 @@
 .missionTitle {
   color: #fff;
   font-size: 48px;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.3;
+  line-height: 1;
   margin: 0;
 }
 
 .problemTitle {
   font-size: 48px;
   letter-spacing: 0;
-  line-height: 62.4px;
+  line-height: 1;
+  max-width: 20ch;
+}
+
+.problemAudioCard {
+  backdrop-filter: blur(3px);
+  background: linear-gradient(
+    180deg,
+    rgba(11, 15, 17, 0.56) 0%,
+    rgba(5, 7, 8, 0.62) 100%
+  );
+  border-radius: 24px;
+  box-shadow:
+    0 18px 30px rgba(0, 0, 0, 0.48),
+    0 8px 18px rgba(0, 0, 0, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.045),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+  margin: 0 auto;
+  max-width: 1220px;
+  padding: clamp(24px, 2.8vw, 34px);
+  width: 100%;
+}
+
+.audioModalOverlay {
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(139, 232, 191, 0.12), transparent 32%),
+    rgba(0, 0, 0, 0.82);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 120;
+}
+
+.audioModalPanel {
+  max-width: 860px;
+  position: relative;
+  width: min(100%, 860px);
+}
+
+.audioModalPanel .problemAudioCard {
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  max-width: none;
+}
+
+.audioModalClose {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.84);
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 24px;
+  height: 38px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+  width: 38px;
+  z-index: 1;
+}
+
+.audioModalClose:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.problemAudioInner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  justify-content: center;
+  min-height: clamp(166px, 18vw, 212px);
+  position: relative;
+}
+
+.problemAudioPlayerRow {
+  align-items: center;
+  display: flex;
+  gap: clamp(14px, 1.4vw, 18px);
+  justify-content: center;
+  padding-inline: clamp(10px, 1.3vw, 14px);
+  width: 100%;
+}
+
+.problemAudioIconButton {
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(24, 35, 31, 0.9) 0%,
+    rgba(10, 16, 14, 0.9) 100%
+  );
+  border: 0;
+  border-radius: 18px;
+  box-shadow:
+    8px 8px 18px rgba(0, 0, 0, 0.46),
+    -4px -4px 10px rgba(255, 255, 255, 0.045),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 68px;
+  justify-content: center;
+  padding: 0;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+  width: 68px;
+}
+
+.problemAudioIconButton:hover {
+  box-shadow:
+    10px 10px 20px rgba(0, 0, 0, 0.52),
+    -5px -5px 12px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.055),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.54);
+  transform: translateY(-1px);
+}
+
+.problemAudioIconButtonActive {
+  box-shadow:
+    inset 5px 5px 12px rgba(0, 0, 0, 0.52),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.04),
+    0 0 0 1px rgba(125, 223, 181, 0.18);
+}
+
+.problemPlayIcon {
+  border-bottom: 10px solid transparent;
+  border-left: 14px solid #d3f9e5;
+  border-top: 10px solid transparent;
+  display: block;
+  height: 0;
+  margin-left: 2px;
+  width: 0;
+}
+
+.problemPauseIcon {
+  background:
+    linear-gradient(90deg, #d3f9e5 0 42%, transparent 42% 58%, #d3f9e5 58% 100%);
+  display: block;
+  height: 14px;
+  width: 12px;
+}
+
+.problemWaveformBlock {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  max-width: 100%;
+  min-width: 0;
+  width: 100%;
+}
+
+.problemWaveform {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.problemAudioTime {
+  color: rgba(206, 239, 225, 0.76);
+  font-family: var(--font-gladia-mono), monospace;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
 }
 
 .problemText {
@@ -590,6 +798,10 @@
   text-align: center;
 }
 
+.testimonialsSection .centeredIntro {
+  margin-bottom: 22px;
+}
+
 .sectionEyebrowTitle {
   align-items: center;
   display: flex;
@@ -630,14 +842,14 @@
 .showcaseTitle {
   color: #fff;
   font-size: 48px;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.3;
+  line-height: 1;
   margin: 0;
 }
 
 .showcaseDescription {
-  color: var(--gladia-muted);
+  color: rgba(214, 240, 229, 0.9);
   font-size: 22px;
   font-weight: 300;
   line-height: 1.4;
@@ -695,14 +907,14 @@
 .performanceIntroTitle {
   color: #fff;
   font-size: 44px;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.15;
+  line-height: 1;
   margin: 0;
 }
 
 .performanceIntroDescription {
-  color: var(--gladia-muted);
+  color: rgba(214, 240, 229, 0.9);
   font-size: 22px;
   font-weight: 300;
   line-height: 1.4;
@@ -713,10 +925,12 @@
 .performanceAction {
   align-items: center;
   align-self: flex-start;
+  appearance: none;
   background: #fff;
   border: 1px solid #fff;
   border-radius: 60px;
   color: #0d0d0d;
+  cursor: pointer;
   display: inline-flex;
   font-size: 18px;
   justify-content: center;
@@ -792,18 +1006,25 @@
 }
 
 .scalingHeroCard {
-  background-color: #000;
-  background-position: 50% 50%;
+  background-color: #0b171b;
+  background-image: url("/gladia/assets/black-shades-horizontal.webp");
+  background-position: left center;
   background-repeat: no-repeat;
   background-size: cover;
   border: 1px solid var(--gladia-charcoal);
   border-radius: 32px;
   display: flex;
   flex-direction: column;
+  isolation: isolate;
   justify-content: space-between;
   min-height: 560px;
   overflow: hidden;
   padding: 40px;
+  position: relative;
+}
+
+.scalingHeroOverlay {
+  display: none;
 }
 
 .scalingHeroText {
@@ -811,24 +1032,31 @@
   flex-direction: column;
   gap: 16px;
   max-width: 400px;
+  position: relative;
+  z-index: 3;
 }
 
 .scalingHeroTitle {
   color: #fff;
   font-size: 44px;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 1.15;
+  line-height: 1;
   margin: 0;
 }
 
 .scalingHeroDescription {
-  color: var(--gladia-muted);
+  color: rgba(214, 240, 229, 0.9);
   font-size: 22px;
   font-weight: 300;
   line-height: 1.4;
   margin: 0;
   max-width: 400px;
+}
+
+.scalingHeroCard .performanceAction {
+  position: relative;
+  z-index: 3;
 }
 
 .scalingRow {
@@ -877,29 +1105,60 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 975px;
+  overflow: hidden;
   padding: 40px;
+  position: relative;
+}
+
+.integrationHeroCard::before {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.36) 0%,
+    rgba(0, 0, 0, 0.42) 45%,
+    rgba(0, 0, 0, 0.48) 100%
+  );
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
 }
 
 .integrationHeroContent {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 302px;
+  max-width: 520px;
+  position: relative;
+  z-index: 1;
 }
 
-.integrationHeroTitle,
+.integrationHeroTitle {
+  color: #fff;
+  font-size: clamp(20px, 2.5vw, 42px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+}
+
+.integrationHeroTitleLine {
+  display: block;
+  white-space: nowrap;
+}
+
 .languageHeroTitle {
   color: #fff;
-  font-size: 44px;
-  font-weight: 300;
+  font-size: 30px;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 50.6px;
+  line-height: 1.04;
   margin: 0;
 }
 
 .integrationHeroDescription,
 .languageHeroDescription {
-  color: #8e8d91;
+  color: rgba(214, 240, 229, 0.9);
   font-size: 22px;
   font-weight: 300;
   letter-spacing: 0;
@@ -920,10 +1179,12 @@
   line-height: 1.5;
   min-height: 63px;
   padding: 18px;
+  position: relative;
   transition:
     background-color 180ms ease,
     color 180ms ease,
     transform 180ms ease;
+  z-index: 1;
 }
 
 .integrationHeroAction:hover {
@@ -1007,23 +1268,10 @@
   margin: 0;
 }
 
-.integrationCardLogos {
-  align-items: center;
-  display: flex;
-  gap: 14px;
-  margin-top: auto;
-}
-
-.integrationCardLogos img {
-  height: 24px;
-  object-fit: contain;
-  width: auto;
-}
-
 .complianceBand {
   background:
-    linear-gradient(210deg, #000, rgba(148, 122, 252, 0.12)),
-    rgba(148, 122, 252, 0.16);
+    linear-gradient(210deg, #000, rgba(125, 223, 181, 0.12)),
+    #081911;
   border: 1px solid var(--gladia-charcoal);
   border-radius: 32px;
   display: grid;
@@ -1041,9 +1289,9 @@
 .complianceBandTitle {
   color: #fff;
   font-size: 48px;
-  font-weight: 300;
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 62.4px;
+  line-height: 1;
   margin: 0;
 }
 
@@ -1101,7 +1349,8 @@
 }
 
 .languageHeroCard {
-  background-color: #000;
+  background-color: #c8efd0;
+  background-blend-mode: multiply;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1118,8 +1367,9 @@
     90deg,
     rgba(0, 0, 0, 0.96) 0%,
     rgba(0, 0, 0, 0.86) 34%,
-    rgba(0, 0, 0, 0.48) 58%,
-    rgba(0, 0, 0, 0) 82%
+    rgba(11, 38, 21, 0.38) 58%,
+    rgba(180, 235, 190, 0.28) 82%,
+    rgba(180, 235, 190, 0.38) 100%
   );
   content: "";
   inset: 0;
@@ -1260,7 +1510,13 @@
 }
 
 .featurePanelDescription,
-.useCaseCard p,
+.useCaseCard p {
+  color: rgba(214, 240, 229, 0.9);
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .footerStrapline,
 .footerLink,
 .testimonialRole,
@@ -1283,20 +1539,6 @@
   height: auto;
   max-height: 132px;
   max-width: min(100%, 240px);
-  object-fit: contain;
-  width: auto;
-}
-
-.inlineLogos {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 6px;
-}
-
-.inlineLogos img {
-  height: 18px;
   object-fit: contain;
   width: auto;
 }
@@ -1421,6 +1663,12 @@
   z-index: 1;
 }
 
+.benchmarkShell::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), transparent 28%),
+    radial-gradient(circle at 50% 0%, rgba(125, 223, 181, 0.12), transparent 30%);
+}
+
 .benchmarkGlow,
 .missionGlow {
   inset: 0;
@@ -1429,8 +1677,8 @@
 
 .benchmarkGlow {
   background:
-    radial-gradient(circle at 50% 0%, rgba(148, 122, 252, 0.28), transparent 36%),
-    radial-gradient(circle at 50% 100%, rgba(86, 214, 255, 0.2), transparent 38%);
+    radial-gradient(circle at 50% 0%, rgba(125, 223, 181, 0.22), transparent 36%),
+    radial-gradient(circle at 50% 100%, rgba(21, 76, 55, 0.34), transparent 38%);
 }
 
 .benchmarkAction {
@@ -1446,14 +1694,20 @@
 }
 
 .testimonialsShell {
-  padding: 32px;
+  align-items: flex-start;
+  display: flex;
+  justify-content: center;
+  min-height: 0;
+  padding: 18px;
 }
 
 .testimonialsGrid {
   display: grid;
   gap: 24px;
-  grid-template-columns: minmax(0, 1.45fr) minmax(360px, 0.95fr);
+  grid-template-columns: minmax(0, 820px);
+  justify-content: center;
   position: relative;
+  width: 100%;
   z-index: 1;
 }
 
@@ -1540,14 +1794,32 @@
 .testimonialColumn {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
+  margin: 0 auto;
+  max-width: 820px;
+  width: 100%;
 }
 
 .testimonialCard {
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding: 28px;
+  justify-content: center;
+  padding: 22px 26px;
+}
+
+.statementContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.statementTitle {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0;
 }
 
 .testimonialTopRow {
@@ -1585,6 +1857,13 @@
   font-size: 16px;
 }
 
+.statementContrast {
+  color: rgba(210, 245, 230, 0.78);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .useCasesShell {
   min-height: 620px;
   padding: 28px;
@@ -1593,8 +1872,8 @@
 .useCasesShell::before {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 26%),
-    radial-gradient(circle at 22% 22%, rgba(148, 122, 252, 0.26), transparent 44%),
-    radial-gradient(circle at 82% 76%, rgba(86, 214, 255, 0.18), transparent 42%);
+    radial-gradient(circle at 22% 22%, rgba(125, 223, 181, 0.2), transparent 44%),
+    radial-gradient(circle at 82% 76%, rgba(21, 76, 55, 0.3), transparent 42%);
 }
 
 .useCasesGrid {
@@ -1607,7 +1886,7 @@
 
 .useCaseCard {
   backdrop-filter: blur(10px);
-  background: linear-gradient(180deg, rgba(70, 39, 117, 0.8), rgba(52, 25, 90, 0.76));
+  background: linear-gradient(180deg, rgba(18, 88, 61, 0.82), rgba(8, 49, 34, 0.78));
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 32px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
@@ -1619,11 +1898,11 @@
 }
 
 .useCaseCard[data-accent="magenta"] {
-  background: linear-gradient(180deg, rgba(63, 31, 104, 0.82), rgba(38, 19, 65, 0.86));
+  background: linear-gradient(180deg, rgba(15, 78, 54, 0.84), rgba(6, 38, 27, 0.88));
 }
 
 .useCaseCard[data-accent="plum"] {
-  background: rgba(8, 8, 14, 0.94);
+  background: rgba(3, 12, 9, 0.94);
 }
 
 .useCaseTop {
@@ -1637,16 +1916,6 @@
   line-height: 1.46;
 }
 
-.useCaseLogoRow {
-  margin-top: auto;
-}
-
-.useCaseLogoRow img {
-  height: 26px;
-  object-fit: contain;
-  width: auto;
-}
-
 .useCaseLink {
   align-self: flex-start;
   background: transparent;
@@ -1656,6 +1925,7 @@
   font-size: 17px;
   font-weight: 500;
   line-height: 1.45;
+  margin-top: auto;
   min-height: 0;
   padding: 0;
 }
@@ -1667,7 +1937,7 @@
 
 .useCaseKickerLink {
   align-items: center;
-  background: rgba(26, 18, 46, 0.54);
+  background: rgba(4, 30, 21, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 999px;
   display: inline-flex;
@@ -1675,7 +1945,7 @@
   margin-top: auto;
   min-height: 56px;
   width: 100%;
-  padding: 7px 14px 7px 7px;
+  padding: 7px 14px;
   transition:
     border-color 180ms ease,
     background-color 180ms ease,
@@ -1683,26 +1953,9 @@
 }
 
 .useCaseKickerLink:hover {
-  background: rgba(39, 28, 66, 0.62);
+  background: rgba(8, 50, 35, 0.68);
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-1px);
-}
-
-.useCaseBrandChip {
-  align-items: center;
-  background: #fff;
-  border-radius: 999px;
-  color: #0d0d0d;
-  display: inline-flex;
-  flex: 0 0 auto;
-  min-height: 40px;
-  padding: 0 14px;
-}
-
-.useCaseBrandChip img {
-  height: 18px;
-  object-fit: contain;
-  width: auto;
 }
 
 .useCaseKickerText {
@@ -1722,15 +1975,32 @@
 }
 
 .missionShell {
-  background-position: center 36%;
-  min-height: 740px;
-  padding: 76px 48px 320px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  padding: 68px 48px 92px;
+}
+
+.missionShell::after {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.54) 100%),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size:
+    auto,
+    3px 3px;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  content: "";
+  inset: 0;
+  opacity: 0.82;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
 }
 
 .missionGlow {
-  background:
-    radial-gradient(circle at 50% 86%, rgba(148, 122, 252, 0.4), transparent 26%),
-    radial-gradient(circle at 50% 100%, rgba(86, 214, 255, 0.22), transparent 40%);
+  background: rgba(0, 0, 0, 0.18);
 }
 
 .missionContent {
@@ -1746,13 +2016,13 @@
 }
 
 .missionTitle {
-  font-size: 56px;
-  letter-spacing: -0.04em;
-  line-height: 1.05;
+  font-size: 48px;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .faqSection {
-  padding-bottom: 144px;
+  padding-bottom: 72px;
 }
 
 .faqLayout {
@@ -1953,6 +2223,422 @@
   width: auto;
 }
 
+.howItWorksSection,
+.productDemoSection,
+.comparisonSection,
+.objectionsSection,
+.roiSection,
+.finalCtaSection {
+  padding: 0 0 96px;
+  position: relative;
+}
+
+.howItWorksSection {
+  margin-top: 0;
+  scroll-margin-top: 120px;
+  z-index: 4;
+}
+
+.howItWorksGrid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.howItWorksCard,
+.objectionCard,
+.productDemoPanel,
+.roiCalculator,
+.roiResultCard {
+  background:
+    linear-gradient(180deg, rgba(10, 28, 21, 0.86), rgba(4, 10, 8, 0.96)),
+    #050505;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 24px 70px rgba(0, 0, 0, 0.24);
+}
+
+.howItWorksCard {
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-height: 280px;
+  padding: 30px;
+}
+
+.howItWorksNumber {
+  align-items: center;
+  background: rgba(125, 223, 181, 0.1);
+  border: 1px solid rgba(125, 223, 181, 0.2);
+  border-radius: 999px;
+  color: #8be8bf;
+  display: inline-flex;
+  font-family: var(--font-gladia-mono), monospace;
+  font-size: 12px;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  min-height: 34px;
+  width: 58px;
+}
+
+.howItWorksCard h3,
+.objectionCard h3,
+.productDemoTimelineItem h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.16;
+  margin: 0;
+}
+
+.howItWorksCard p,
+.objectionCard p,
+.productDemoTimelineItem p,
+.productDemoMetric p,
+.roiResultCard p,
+.roiAssumptions li {
+  color: rgba(214, 240, 229, 0.76);
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.productDemoShell,
+.roiShell {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(125, 223, 181, 0.18), transparent 34%),
+    linear-gradient(135deg, rgba(7, 31, 22, 0.92), rgba(4, 5, 6, 0.98));
+  border: 1px solid var(--gladia-charcoal);
+  border-radius: 32px;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 0.82fr 1.18fr;
+  overflow: hidden;
+  padding: 40px;
+  position: relative;
+}
+
+.productDemoIntro,
+.roiIntro {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.productDemoPanel {
+  border-radius: 28px;
+  padding: 22px;
+  position: relative;
+  z-index: 1;
+}
+
+.productDemoTopbar {
+  align-items: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding: 14px 16px;
+}
+
+.productDemoTopbar span {
+  color: #fff;
+  font-size: 16px;
+}
+
+.productDemoTopbar strong {
+  background: rgba(125, 223, 181, 0.14);
+  border: 1px solid rgba(125, 223, 181, 0.22);
+  border-radius: 999px;
+  color: #8be8bf;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 10px;
+}
+
+.productDemoMetrics {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 18px;
+}
+
+.productDemoMetric {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 18px;
+}
+
+.productDemoMetric strong {
+  color: #fff;
+  display: block;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.productDemoMetric span {
+  color: #8be8bf;
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.productDemoTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.productDemoTimelineItem {
+  align-items: flex-start;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+}
+
+.productDemoDot {
+  background: #8be8bf;
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px rgba(139, 232, 191, 0.08);
+  flex: 0 0 auto;
+  height: 10px;
+  margin-top: 7px;
+  width: 10px;
+}
+
+.comparisonTableWrap {
+  background: #050505;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  overflow-x: auto;
+}
+
+.comparisonTable {
+  border-collapse: collapse;
+  min-width: 960px;
+  width: 100%;
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.45;
+  padding: 22px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparisonTable thead th {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.comparisonTable tbody th {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  width: 18%;
+}
+
+.comparisonTable tbody td:last-child,
+.comparisonTable thead th:last-child {
+  background: rgba(125, 223, 181, 0.08);
+  color: rgba(222, 255, 241, 0.92);
+}
+
+.comparisonTable tbody tr:last-child th,
+.comparisonTable tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.objectionsLayout {
+  display: grid;
+  gap: 36px;
+  grid-template-columns: 0.82fr 1.18fr;
+}
+
+.objectionsIntro {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.objectionsList {
+  display: grid;
+  gap: 14px;
+}
+
+.objectionCard {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.roiShell {
+  align-items: stretch;
+}
+
+.roiCalculator {
+  border-radius: 28px;
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.roiControls {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roiField {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+
+.roiField span {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.roiField input {
+  background: rgba(0, 0, 0, 0.38);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: #fff;
+  font: inherit;
+  min-height: 44px;
+  padding: 0 12px;
+  width: 100%;
+}
+
+.roiField input[type="range"] {
+  accent-color: #8be8bf;
+  padding: 0;
+}
+
+.roiField strong {
+  color: #8be8bf;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.roiResultCard {
+  border-radius: 24px;
+  padding: 24px;
+}
+
+.roiResultLabel {
+  color: rgba(255, 255, 255, 0.64);
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.roiResultValue {
+  color: #fff;
+  display: block;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.roiAssumptions {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.roiAssumptions li {
+  padding-left: 18px;
+  position: relative;
+}
+
+.roiAssumptions li::before {
+  background: #8be8bf;
+  border-radius: 999px;
+  content: "";
+  height: 6px;
+  left: 0;
+  position: absolute;
+  top: 9px;
+  width: 6px;
+}
+
+.finalCtaSection {
+  padding-bottom: 72px;
+}
+
+.finalCtaShell {
+  align-items: center;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(125, 223, 181, 0.2), transparent 35%),
+    linear-gradient(180deg, rgba(8, 40, 28, 0.94), rgba(3, 8, 6, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 360px;
+  justify-content: center;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.finalCtaShell h2 {
+  color: #fff;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+  max-width: 760px;
+}
+
+.finalCtaShell p {
+  color: rgba(214, 240, 229, 0.82);
+  font-size: 20px;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 660px;
+}
+
+.finalCtaActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 8px;
+}
+
 @media (max-width: 1100px) {
   .container,
   .containerNarrow {
@@ -1979,6 +2665,9 @@
   .showcaseShellIntegration,
   .performanceLayout,
   .complianceShell,
+  .productDemoShell,
+  .objectionsLayout,
+  .roiShell,
   .testimonialsGrid,
   .faqLayout,
   .footerGrid {
@@ -1987,6 +2676,9 @@
 
   .showcaseCardsTriptych,
   .performanceGrid,
+  .howItWorksGrid,
+  .productDemoMetrics,
+  .roiControls,
   .footerColumns {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -2053,17 +2745,12 @@
 
 @media (max-width: 860px) {
   .heroSection {
-    min-height: 760px;
+    --hero-fade-height: 96px;
+    min-height: 720px;
   }
 
   .heroContent {
     padding-bottom: 120px;
-  }
-
-  .heroTitleOrb {
-    height: 220px;
-    top: 14px;
-    width: min(980px, 138%);
   }
 
   .heroTitleLine,
@@ -2080,9 +2767,21 @@
   .problemText,
   .showcaseDescription,
   .sectionLead,
-  .missionText,
-  .trustedLabel {
+  .missionText {
     font-size: 18px;
+  }
+
+  .problemAudioCard {
+    padding: 22px;
+  }
+
+  .problemAudioPlayerRow {
+    gap: 10px;
+  }
+
+  .problemAudioIconButton {
+    height: 58px;
+    width: 58px;
   }
 
   .heroArc {
@@ -2097,14 +2796,16 @@
   }
 
   .trustedTrack {
-    gap: 40px;
-    padding: 0 68px;
-    transform: translateX(-40px);
+    gap: 28px 34px;
+    padding: 28px 24px;
+    transform: none;
   }
 
   .featurePanelTitle,
   .performanceIntroTitle,
   .scalingHeroTitle,
+  .howItWorksCard h3,
+  .objectionCard h3,
   .useCaseCard h3 {
     font-size: 26px;
   }
@@ -2122,10 +2823,9 @@
     font-size: 18px;
   }
 
-  .integrationHeroTitle,
   .languageHeroTitle {
-    font-size: 40px;
-    line-height: 1.14;
+    font-size: 30px;
+    line-height: 1.08;
   }
 
   .integrationHeroDescription,
@@ -2175,17 +2875,22 @@
   .scalingRowCard {
     padding: 28px;
   }
+
+  .productDemoShell,
+  .roiShell {
+    padding: 30px;
+  }
+
+  .finalCtaShell h2,
+  .roiResultValue {
+    font-size: 40px;
+  }
 }
 
 @media (max-width: 640px) {
   .heroSection {
-    min-height: 680px;
-  }
-
-  .heroTitleOrb {
-    height: 170px;
-    top: 10px;
-    width: 150%;
+    --hero-fade-height: 72px;
+    min-height: 640px;
   }
 
   .container,
@@ -2209,7 +2914,7 @@
   }
 
   .heroContent {
-    padding: 72px 16px 96px;
+    padding: 56px 16px 96px;
   }
 
   .announcement {
@@ -2240,6 +2945,25 @@
 
   .heroActions {
     width: auto;
+  }
+
+  .problemAudioCard {
+    border-radius: 20px !important;
+    padding: 18px;
+  }
+
+  .problemAudioPlayerRow {
+    gap: 8px;
+  }
+
+  .problemAudioIconButton {
+    border-radius: 14px;
+    height: 52px;
+    width: 52px;
+  }
+
+  .problemAudioTime {
+    font-size: 12px;
   }
 
   .heroPrimaryAction,
@@ -2304,10 +3028,9 @@
     min-height: 720px;
   }
 
-  .integrationHeroTitle,
   .languageHeroTitle {
-    font-size: 42px;
-    line-height: 1.1;
+    font-size: 30px;
+    line-height: 1.08;
   }
 
   .integrationHeroDescription,
@@ -2318,10 +3041,6 @@
 
   .integrationCard {
     gap: 20px;
-  }
-
-  .integrationCardLogos img {
-    height: 20px;
   }
 
   .complianceBand {
@@ -2376,27 +3095,30 @@
     padding-top: 36px;
   }
 
+  .trustedLabel {
+    font-size: 32px;
+    margin-bottom: 28px;
+  }
+
   .trustedShell {
-    min-height: 76px;
+    min-height: 0;
     max-width: 100%;
   }
 
   .trustedLogo {
-    height: 76px;
-    width: 100px;
+    height: 34px;
+    width: min(138px, 42vw);
   }
 
-  .trustedLogoImage {
-    max-height: 24px;
-    max-width: 100px;
+  .trustedLogo svg {
+    max-height: 34px;
   }
 
   .trustedTrack {
-    gap: 28px;
-    height: 76px;
-    padding: 0 52px;
-    transform: translateX(-30px);
-    width: calc(100% + 60px);
+    gap: 24px 30px;
+    min-height: 0;
+    padding: 28px 22px;
+    width: 100%;
   }
 
   .showcaseShell,
@@ -2416,6 +3138,9 @@
   .showcaseCardsTriptych,
   .showcaseCardsIntegration,
   .useCasesGrid,
+  .howItWorksGrid,
+  .productDemoMetrics,
+  .roiControls,
   .complianceBadgeGrid,
   .footerColumns {
     grid-template-columns: 1fr;
@@ -2437,6 +3162,10 @@
 
   .featurePanelDescription,
   .useCaseCard p,
+  .howItWorksCard p,
+  .objectionCard p,
+  .productDemoTimelineItem p,
+  .productDemoMetric p,
   .footerStrapline,
   .footerLink,
   .missionText,
@@ -2486,21 +3215,73 @@
 
   .useCaseKickerLink {
     min-height: 50px;
-    padding: 6px 12px 6px 6px;
-  }
-
-  .useCaseBrandChip {
-    min-height: 36px;
-    padding: 0 12px;
-  }
-
-  .useCaseBrandChip img {
-    height: 16px;
+    padding: 6px 12px;
   }
 
   .missionShell {
-    min-height: 620px;
-    padding: 56px 24px 220px;
+    min-height: 420px;
+    padding: 42px 24px 72px;
+  }
+
+  .howItWorksSection,
+  .productDemoSection,
+  .comparisonSection,
+  .objectionsSection,
+  .roiSection,
+  .finalCtaSection {
+    padding-bottom: 64px;
+  }
+
+  .howItWorksCard,
+  .productDemoShell,
+  .productDemoPanel,
+  .objectionCard,
+  .roiShell,
+  .roiCalculator,
+  .roiResultCard,
+  .finalCtaShell {
+    border-radius: 24px;
+    padding: 22px;
+  }
+
+  .howItWorksCard {
+    min-height: 0;
+  }
+
+  .productDemoTopbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .productDemoMetric strong {
+    font-size: 28px;
+  }
+
+  .comparisonTable {
+    min-width: 820px;
+  }
+
+  .comparisonTable th,
+  .comparisonTable td {
+    font-size: 14px;
+    padding: 18px;
+  }
+
+  .roiResultValue {
+    font-size: 34px;
+  }
+
+  .finalCtaShell {
+    min-height: 320px;
+  }
+
+  .finalCtaShell h2 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .finalCtaShell p {
+    font-size: 17px;
   }
 
   .faqQuestion {

@@ -42,13 +42,34 @@ export interface GladiaComplianceBadge {
   shortLabel?: string;
 }
 
-export interface GladiaTestimonial {
-  avatar: string;
-  company: string;
-  companyLogo: string;
-  name: string;
-  quote: string;
-  role: string;
+export interface GladiaStatement {
+  body: string;
+  contrast: string;
+  title: string;
+}
+
+export interface GladiaStep {
+  description: string;
+  eyebrow?: string;
+  title: string;
+}
+
+export interface GladiaMetric {
+  description?: string;
+  label: string;
+  value: string;
+}
+
+export interface GladiaComparisonRow {
+  automation: string;
+  criterion: string;
+  manual: string;
+  rebound: string;
+}
+
+export interface GladiaObjection {
+  answer: string;
+  question: string;
 }
 
 export interface GladiaUseCase {
@@ -80,6 +101,12 @@ export interface GladiaPageData {
     graphicAlt: string;
     title: string;
   };
+  comparison: {
+    description: string;
+    eyebrow: string;
+    rows: GladiaComparisonRow[];
+    title: string;
+  };
   compliance: {
     action: GladiaLink;
     badges: GladiaComplianceBadge[];
@@ -91,7 +118,9 @@ export interface GladiaPageData {
     title: string;
   };
   faq: {
-    items: GladiaFaqItem[];
+    categories: Record<string, string>;
+    itemsByCategory: Record<string, GladiaFaqItem[]>;
+    subtitle: string;
     title: string;
   };
   footer: {
@@ -115,6 +144,12 @@ export interface GladiaPageData {
     trustedLabel: string;
     trustedLogos: GladiaLogo[];
   };
+  howItWorks: {
+    description: string;
+    eyebrow: string;
+    steps: GladiaStep[];
+    title: string;
+  };
   integration: GladiaFeatureSection & {
     supportCard: GladiaFeatureCard;
   };
@@ -130,19 +165,32 @@ export interface GladiaPageData {
     description: string;
     title: string;
   };
+  productDemo: {
+    action: GladiaLink;
+    description: string;
+    eyebrow: string;
+    metrics: GladiaMetric[];
+    timeline: GladiaStep[];
+    title: string;
+  };
+  objections: {
+    description: string;
+    eyebrow: string;
+    items: GladiaObjection[];
+    title: string;
+  };
+  roi: {
+    assumptions: string[];
+    description: string;
+    eyebrow: string;
+    title: string;
+  };
   scaling: GladiaFeatureSection;
   testimonials: {
     background: string;
-    caseStudy: {
-      caption: string;
-      company: string;
-      name: string;
-      role: string;
-      videoUrl: string;
-    };
     description: string;
     eyebrow: string;
-    items: GladiaTestimonial[];
+    items: GladiaStatement[];
     title: string;
   };
   useCases: {
@@ -150,6 +198,12 @@ export interface GladiaPageData {
     cards: GladiaUseCase[];
     description: string;
     eyebrow: string;
+    title: string;
+  };
+  finalCta: {
+    description: string;
+    primaryAction: GladiaLink;
+    secondaryAction: GladiaLink;
     title: string;
   };
 }

@@ -9,3 +9,15 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Local Netlify folder
+.netlify
+
+# Local verification artifacts
+faq-*.png
+full2.png
+faq-snippet.html
+next-*.log
+tailwindcss-*.log
+tsconfig.tsbuildinfo
+registry/

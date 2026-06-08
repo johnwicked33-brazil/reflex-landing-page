@@ -1,11 +1,31 @@
 @import "tailwindcss";
+@import "../node_modules/tw-animate-css/dist/tw-animate.css";
+@source "../app/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../components/**/*.{js,ts,jsx,tsx,mdx}";
+@source "../data/**/*.{js,ts,jsx,tsx,mdx}";
 
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --border: rgba(255, 255, 255, 0.12);
+  --card: #0a0a0a;
+  --muted: #121212;
+  --muted-foreground: #b4b4b8;
+  --primary: #8be8bf;
+  --primary-foreground: #02160d;
+  --secondary: #111111;
+  --secondary-foreground: #f4f4f5;
+  --accent: #1a1a1a;
+  --accent-foreground: #f4f4f5;
+  --popover: #0c0c0c;
+  --popover-foreground: #f4f4f5;
+  --destructive: #7f1d1d;
+  --destructive-foreground: #fef2f2;
+  --input: rgba(255, 255, 255, 0.16);
+  --ring: rgba(139, 232, 191, 0.45);
   --gladia-background: #000000;
   --gladia-foreground: #ffffff;
-  --gladia-muted: #8e8d91;
+  --gladia-muted: #9abfaf;
   --gladia-border: rgba(255, 255, 255, 0.08);
   --gladia-border-strong: #1f1f1f;
   --gladia-surface: rgba(0, 0, 0, 0.72);
@@ -19,12 +39,29 @@
 
 @theme inline {
   --color-background: var(--background);
+  --color-border: var(--border);
+  --color-card: var(--card);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
   --font-sans: var(--font-gladia-sans);
 }
 
 * {
   box-sizing: border-box;
+  border-color: var(--border);
 }
 
 html,
@@ -72,6 +109,209 @@ select {
 ::selection {
   background: rgba(148, 122, 252, 0.36);
   color: #fff;
+}
+
+@property --gradient-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes gradient-rotate {
+  from {
+    --gradient-angle: 0deg;
+  }
+
+  to {
+    --gradient-angle: 360deg;
+  }
+}
+
+@keyframes fade-slide-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-right-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes testimonial-in {
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-element {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(14px);
+  animation: fade-slide-in 0.7s ease forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateX(24px);
+  animation: slide-right-in 0.8s ease forwards;
+}
+
+.animate-testimonial {
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(16px) scale(0.96);
+  animation: testimonial-in 0.7s ease forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+.animate-delay-600 {
+  animation-delay: 600ms;
+}
+
+.animate-delay-700 {
+  animation-delay: 700ms;
+}
+
+.animate-delay-800 {
+  animation-delay: 800ms;
+}
+
+.animate-delay-900 {
+  animation-delay: 900ms;
+}
+
+.animate-delay-1000 {
+  animation-delay: 1000ms;
+}
+
+.animate-delay-1200 {
+  animation-delay: 1200ms;
+}
+
+.animate-delay-1400 {
+  animation-delay: 1400ms;
+}
+
+.gradient-border-component {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+}
+
+.gradient-border-component::before {
+  background: conic-gradient(
+    from var(--gradient-angle, 0deg),
+    var(--gradient-primary, #154c37) 0%,
+    var(--gradient-secondary, #7ddfb5) 37%,
+    var(--gradient-accent, #1f6f4f) 30%,
+    var(--gradient-secondary, #7ddfb5) 33%,
+    var(--gradient-primary, #154c37) 40%,
+    var(--gradient-primary, #154c37) 50%,
+    var(--gradient-secondary, #7ddfb5) 77%,
+    var(--gradient-accent, #1f6f4f) 80%,
+    var(--gradient-secondary, #7ddfb5) 83%,
+    var(--gradient-primary, #154c37) 90%
+  );
+  border-radius: var(--border-radius, 20px);
+  content: "";
+  inset: 0;
+  padding: var(--border-width, 2px);
+  pointer-events: none;
+  position: absolute;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  filter: blur(1.2px);
+  opacity: 0.5;
+}
+
+.gradient-border-component::after {
+  background: conic-gradient(
+    from var(--gradient-angle, 0deg),
+    var(--gradient-primary, #154c37) 0%,
+    var(--gradient-secondary, #7ddfb5) 37%,
+    var(--gradient-accent, #1f6f4f) 30%,
+    var(--gradient-secondary, #7ddfb5) 33%,
+    var(--gradient-primary, #154c37) 40%,
+    var(--gradient-primary, #154c37) 50%,
+    var(--gradient-secondary, #7ddfb5) 77%,
+    var(--gradient-accent, #1f6f4f) 80%,
+    var(--gradient-secondary, #7ddfb5) 83%,
+    var(--gradient-primary, #154c37) 90%
+  );
+  border-radius: var(--border-radius, 20px);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  filter: blur(16px);
+  opacity: 0.32;
+  z-index: 0;
+}
+
+.gradient-border-inner {
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  background: var(--bg-color, rgba(0, 0, 0, 0.5));
+  border-radius: calc(var(--border-radius, 20px) - var(--border-width, 2px));
+  height: 100%;
+  min-height: inherit;
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+
+.gradient-border-auto {
+  animation: gradient-rotate var(--animation-duration, 5s) linear infinite;
+}
+
+.gradient-border-hover {
+  animation: none;
+}
+
+.gradient-border-hover:hover {
+  animation: gradient-rotate var(--animation-duration, 5s) linear infinite;
+}
+
+.gradient-border-stop-hover {
+  animation: gradient-rotate var(--animation-duration, 5s) linear infinite;
+}
+
+.gradient-border-stop-hover:hover {
+  animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {

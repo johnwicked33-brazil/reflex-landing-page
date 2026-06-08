@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import styles from "./gladia.module.css";
 import WordLoader from "./word-loader";
 import FlowFieldBackground from "@/components/ui/flow-field-background";
@@ -17,10 +18,15 @@ type GladiaHeroProps = {
   titleLines: string[];
 };
 
+function externalLinkProps(href: string) {
+  return href.startsWith("http")
+    ? ({ rel: "noreferrer", target: "_blank" } as const)
+    : {};
+}
+
 export function GladiaHero({
   actions,
   announcement,
-  background: _background,
   description,
   headerActions,
   nav,
@@ -31,13 +37,9 @@ export function GladiaHero({
     <section className={styles.heroSection}>
       <header className={styles.navShell}>
         <div className={styles.navInner}>
-          <a className={styles.brand} href="/">
-            <img
-              alt="Gladia"
-              className={styles.brandLogo}
-              src="/gladia/assets/66914a5d5cdd9676a68fa3f6_gladia-logo.svg"
-            />
-          </a>
+          <Link className={styles.brand} href="/">
+            <span className={styles.brandWordmark}>Rebound</span>
+          </Link>
 
           <nav aria-label="Main navigation" className={styles.navLinks}>
             {nav.map((item) => (
@@ -55,8 +57,7 @@ export function GladiaHero({
                   index === 0 ? styles.navActionDark : styles.navActionLight
                 }
                 href={action.href}
-                rel="noreferrer"
-                target="_blank"
+                {...externalLinkProps(action.href)}
               >
                 {action.label}
               </a>
@@ -70,7 +71,7 @@ export function GladiaHero({
           className={styles.heroFlowField}
           color="#7ddfb5"
           particleCount={1400}
-          speed={0.7}
+          speed={0.82}
           trailOpacity={0.08}
         />
       </div>
@@ -81,8 +82,7 @@ export function GladiaHero({
         <a
           className={styles.announcement}
           href={announcement.href}
-          rel="noreferrer"
-          target="_blank"
+          {...externalLinkProps(announcement.href)}
         >
           <span className={styles.announcementBadge}>NEW</span>
           <span className={styles.announcementText}>{announcement.label}</span>
@@ -94,8 +94,6 @@ export function GladiaHero({
         </a>
 
         <div className={styles.heroHeadingWrap}>
-          <div aria-hidden className={styles.heroTitleOrb} />
-
           <h1 className={styles.heroTitle}>
             {titleLines.map((line) => (
               <span key={line} className={styles.heroTitleLine}>
@@ -105,7 +103,7 @@ export function GladiaHero({
             <span className={`${styles.heroTitleLine} ${styles.heroTitleLineRotating}`}>
               <WordLoader
                 className={styles.heroWordLoader}
-                durationPerWord={3.5}
+                durationPerWord={2.5}
                 wordClassName={styles.heroWordLoaderWord}
                 words={rotatingWords}
               />
@@ -124,15 +122,13 @@ export function GladiaHero({
                     : styles.heroSecondaryAction
                 }
                 href={action.href}
-                rel="noreferrer"
-                target="_blank"
+                {...externalLinkProps(action.href)}
               >
                 {action.label}
               </a>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

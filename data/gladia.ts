@@ -3,237 +3,235 @@ import type { GladiaPageData } from "@/types/gladia";
 export const gladiaPageData: GladiaPageData = {
   hero: {
     announcement: {
-      href: "https://www.gladia.io/stt-api-benchmarks",
-      label: "Open-source benchmarks here",
+      href: "#product",
+      label: "Revolucione seu comercial sem esfor\u00e7o",
     },
     background: "/gladia/assets/699dd45d2deab1aeb6a44e35_Background.webp",
-    titleLines: ["Agentes de I.A por Voz", "para Liga\u00e7\u00f5es que"],
+    titleLines: ["Agentes de I.A por Voz", "para Liga\u00e7\u00f5es Ativas que"],
     rotatingWords: [
-      "recebe novos leads",
+      "aciona novos leads",
       "reativa leads da base",
-      "recupera carrinhos abandonado",
+      "recupera carrinhos abandonados",
+      "realiza pesquisa de satisfa\u00e7\u00e3o",
     ],
     description:
       "Atenda todos seus leads com nosso sistema de Agentes de I.A para Liga\u00e7\u00f5es, CRM e WhatsApp, na mesma plataforma.",
     nav: [
-      { href: "#product", label: "Product" },
-      { href: "#solutions", label: "Solutions" },
-      { href: "https://www.gladia.io/pricing", label: "Pricing" },
-      { href: "#developers", label: "Developers" },
-      { href: "#resources", label: "Resources" },
-      { href: "#company", label: "Company" },
+      { href: "#como-funciona", label: "Como funciona" },
+      { href: "#developers", label: "Integra\u00e7\u00e3o" },
+      { href: "#nossos-clientes", label: "Nossos clientes" },
+      { href: "#perguntas", label: "Perguntas" },
+      { href: "#preco", label: "Pre\u00e7o" },
     ],
     headerActions: [
       {
-        href: "https://www.gladia.io/request-demo",
-        label: "Request a demo",
+        href: "#preco",
+        label: "Solicitar demonstra\u00e7\u00e3o",
         variant: "light",
       },
       {
-        href: "https://app.gladia.io/",
-        label: "Sign up for free",
+        href: "#preco",
+        label: "Cadastre-se gr\u00e1tis",
         variant: "dark",
       },
     ],
     actions: [
       {
-        href: "https://app.gladia.io/",
+        href: "#preco",
         label: "Ativar Sistema",
         variant: "light",
       },
       {
-        href: "https://www.gladia.io/request-demo",
+        href: "#preco",
         label: "Marque uma Demonstra\u00e7\u00e3o",
         variant: "dark",
       },
     ],
-    trustedLabel: "Trusted by 300,000+ developers worldwide",
+    trustedLabel: "Estrutura confiável para escalar a sua operação.",
     trustedAction: {
-      href: "https://www.gladia.io/testimonials",
-      label: "See more",
+      href: "#nossos-clientes",
+      label: "Ver mais",
     },
-    trustedLogos: [
+    trustedLogos: [],
+  },
+  howItWorks: {
+    eyebrow: "COMO FUNCIONA",
+    title: "Coloque uma campanha no ar em 3 passos",
+    description:
+      "Da base de leads ao contato automatizado: a Rebound entra no seu processo comercial sem exigir uma troca completa de ferramentas.",
+    steps: [
       {
-        href: "https://www.method.com/",
-        name: "Method",
-        src: "/gladia/assets/669fab92f9f5f07cc3e09ef8_logo-method.svg",
+        eyebrow: "01",
+        title: "Conecte sua base",
+        description:
+          "Suba uma planilha, conecte seu CRM ou use um webhook para acionar ligações quando o lead chegar em uma etapa específica.",
       },
       {
-        href: "https://www.recall.ai/",
-        name: "Recall",
-        src: "/gladia/assets/669fab9ea5868389244b7417_logo-recall.svg",
+        eyebrow: "02",
+        title: "Defina objetivo e abordagem",
+        description:
+          "Escolha se a campanha vai reativar leads, recuperar carrinhos, confirmar agendamentos ou receber novos contatos.",
       },
       {
-        href: "https://www.veed.io/",
-        name: "VEED",
-        src: "/gladia/assets/66cdfcbe778e42d9f068993c_logo-veed.svg",
-      },
-      {
-        href: "https://www.adversus.io/",
-        name: "Adversus",
-        src: "/gladia/assets/6977a3eb22791a398ad7cbd9_4f88e56fc94c8a723aaded98d5d14994_Adversus-logo.svg",
-      },
-      {
-        href: "https://alan.com/",
-        name: "Alan",
-        src: "/gladia/assets/669fabd7fc0afa2e80be301f_logo-alan.svg",
-      },
-      {
-        href: "https://attention.tech/",
-        name: "Attention",
-        src: "/gladia/assets/67b0ce5dbb0e44bc6109ad7c_logo-attention.svg",
-      },
-      {
-        href: "https://jellysmack.com/",
-        name: "Jellysmack",
-        src: "/gladia/assets/669fab6be0847c3aa68f7149_logo-jellysmack.svg",
-      },
-      {
-        href: "https://www.mojo-app.com/",
-        name: "Mojo",
-        src: "/gladia/assets/669fac163b4ca2361685170f_logo-mojo.svg",
-      },
-      {
-        href: "https://bambuser.com/",
-        name: "Bambuser",
-        src: "/gladia/assets/67b0ce85c98b23813ae581d4_logo-bambuser.svg",
-      },
-      {
-        href: "https://www.citi.com/",
-        name: "Citibank",
-        src: "/gladia/assets/67aa69ac4b01577f54ae91e3_logo-citibank.svg",
-      },
-      {
-        href: "https://www.samsung.com/",
-        name: "Samsung",
-        src: "/gladia/assets/67aa69ac8d21262e4216fa53_logo-samsung.svg",
-      },
-      {
-        href: "https://www.oracle.com/",
-        name: "Oracle",
-        src: "/gladia/assets/67aa69ac8d21262e4216fa5b_logo-oracle.svg",
-      },
-      {
-        href: "https://www.microsoft.com/",
-        name: "Microsoft",
-        src: "/gladia/assets/67aa69acf2c24ff2955dc55a_logo-microsoft.svg",
-      },
-      {
-        href: "https://www.softbank.com/",
-        name: "SoftBank",
-        src: "/gladia/assets/67aa69ac303690b7b2b0eb75_logo-softbank.svg",
+        eyebrow: "03",
+        title: "Acompanhe resultado e próximos passos",
+        description:
+          "Veja gravação, resumo, status da ligação, motivo de sucesso ou falha e encaminhamento para WhatsApp ou atendimento humano.",
       },
     ],
   },
   problem: {
-    title: "Most voice platform failures start with bad STT",
+    title: "Ou\u00e7a a grava\u00e7\u00e3o de uma liga\u00e7\u00e3o real",
     description:
-      "From missed key information to misattributed speakers, poor transcripts break trust in your product. Gladia captures critical insights across accents, jargon, and industries to deliver reliable voice experiences.",
+      "De informa\u00e7\u00f5es-chave perdidas a falas atribu\u00eddas ao interlocutor errado, transcri\u00e7\u00f5es ruins quebram a confian\u00e7a no seu produto. A Rebound captura insights cr\u00edticos em diferentes sotaques, jarg\u00f5es e setores para entregar experi\u00eancias de voz confi\u00e1veis.",
   },
   performance: {
     id: "product",
-    eyebrow: "performance",
-    title: "Performance that won't disappoint",
+    eyebrow: "DESEMPENHO",
+    title: "Voz natural para conversas que convertem",
     description:
-      "Async and real-time STT models with high precision on key entities.",
+      "Atenda, qualifique e reengaje contatos com uma voz fluida, humana e pronta para agir no momento certo.",
     action: {
-      href: "https://www.gladia.io/competitors/benchmarks",
-      label: "Check our benchmarks",
+      href: "/audio/demo-call-waveform.wav",
+      label: "Ouvir \u00e1udio",
     },
     background:
       "/gladia/assets/68d2575ad4dedb219b6668a7_d03124331526c19ecdb4423263e1c3a2_Homepage-bento-benefits-bg.avif",
     cards: [
       {
         accent: "cyan",
-        title: "Sub-300ms latency",
+        title: "Reativar leads que n\u00e3o respondem",
         description:
-          "To keep conversations seamless and ensure smooth, uninterrupted dialogue every time.",
+          "Retome conversas frias com abordagem natural, sem parecer rob\u00f4, e aumente respostas de leads parados.",
         image: "/gladia/assets/68d2c14bdabaca2ad339fff7_Sub-200ms.avif",
-        imageAlt: "Latency visual",
+        imageAlt: "Visual de lat\u00eancia",
       },
       {
         accent: "violet",
-        title: "Leading STT accuracy",
+        title: "Recuperar carrinho abandonado",
         description:
-          "Capturing numerical, jargon, and key entities such as names and emails for downstream agent tasks.",
+          "Recupere vendas perdidas com follow-up no timing certo, linguagem consultiva e foco em fechamento.",
         image: "/gladia/assets/68d397760bcb3b776b166ae5_94-Accuracy.avif",
-        imageAlt: "Accuracy visual",
+        imageAlt: "Visual de precis\u00e3o",
       },
       {
         accent: "emerald",
-        title: "Predictable, stable performance",
+        title: "Realizar avisos de agendamentos",
         description:
-          "Forget variance spikes to deliver a consistent user experience.",
+          "Confirme compromissos, reduza faltas e mantenha sua opera\u00e7\u00e3o organizada com lembretes autom\u00e1ticos.",
         image: "/gladia/assets/68d3c872979505715cd7099e_Performance.avif",
-        imageAlt: "Stability visual",
+        imageAlt: "Visual de estabilidade",
       },
       {
         accent: "amber",
-        title: "Optimized for SIP",
+        title: "Receber novos leads",
         description:
-          "As well as telephony protocols (8 kHz), fitting natively into your existing workflows.",
+          "Atenda novos contatos na hora, colete dados essenciais e encaminhe cada lead para o pr\u00f3ximo passo.",
         image: "/gladia/assets/68d3c87259929b50a0be4506_Tailored.avif",
-        imageAlt: "SIP optimization visual",
+        imageAlt: "Visual de otimiza\u00e7\u00e3o SIP",
+      },
+    ],
+  },
+  productDemo: {
+    eyebrow: "DEMO DO PRODUTO",
+    title: "Veja o agente trabalhando, não apenas a promessa",
+    description:
+      "Acompanhe campanhas, ligações, análise de sucesso e próximos contatos em um painel pensado para operação comercial.",
+    action: {
+      href: "#preco",
+      label: "Testar com minha base",
+    },
+    metrics: [
+      {
+        value: "1.248",
+        label: "contatos na fila",
+        description: "Leads prontos para ligação ou follow-up.",
+      },
+      {
+        value: "37%",
+        label: "taxa de contato",
+        description: "Visão rápida do avanço da campanha.",
+      },
+      {
+        value: "12 min",
+        label: "tempo médio",
+        description: "Do lead parado ao próximo contato.",
+      },
+    ],
+    timeline: [
+      {
+        title: "Ligação concluída",
+        description:
+          "O agente identifica interesse, objeções e próximos passos da conversa.",
+      },
+      {
+        title: "Resumo e validação gerados",
+        description:
+          "A equipe entende por que a ligação avançou, falhou ou precisa de revisão.",
+      },
+      {
+        title: "WhatsApp enviado automaticamente",
+        description:
+          "Quando faz sentido, o contato recebe a continuidade no canal da empresa.",
       },
     ],
   },
   scaling: {
     id: "solutions",
-    eyebrow: "SCALING",
-    title: "Scale without thinking",
-    description: "Instant scalability. No limits, no fine print.",
+    eyebrow: "ESCALA",
+    title: "Escale sua opera\u00e7\u00e3o sem perder controle",
+    description:
+      "Ative campanhas em paralelo para reativar leads frios, recuperar carrinhos abandonados, confirmar agendamentos e receber novos leads com consist\u00eancia.",
     action: {
-      href: "https://www.gladia.io/request-demo",
-      label: "Talk to sales",
+      href: "#preco",
+      label: "Assinar Rebound",
     },
     background:
       "/gladia/assets/68d2c86cc2fa6c74349f9804_6f14f8895811502991dcb5bbcc1f34b3_Homepage-bento-scale-bg.avif",
     cards: [
       {
         accent: "violet",
-        title: "Infinite parallel streams",
+        title: "Campanhas simult\u00e2neas, sem fila",
         description:
-          "No need to forecast, give notice, or over-provision in advance.",
+          "Rode m\u00faltiplos fluxos ao mesmo tempo sem travar sua opera\u00e7\u00e3o comercial, mesmo em picos de demanda.",
         image: "/gladia/assets/68d3c9a0cfb16b0b6afe5aae_Parallel.avif",
-        imageAlt: "Parallel streams visual",
+        imageAlt: "Visual de fluxos paralelos",
       },
       {
         accent: "cyan",
-        title: "Zero infra burden",
+        title: "Crescimento com opera\u00e7\u00e3o enxuta",
         description:
-          "Save at least 20% of DevOps effort without sacrificing latency, with no need to self-host.",
+          "Automatize rotinas de contato e follow-up para o time focar no que mais importa: convers\u00e3o e fechamento.",
         image: "/gladia/assets/68d3c9a08b2f71326c82d3c1_Eye.avif",
-        imageAlt: "Infra burden visual",
+        imageAlt: "Visual de carga de infraestrutura",
       },
       {
         accent: "amber",
-        title: "Flexible, usage-based pricing",
+        title: "Custos previs\u00edveis por uso real",
         description:
-          "Start small, test freely, scale-as-you-go with clear pricing tiers.",
+          "Comece pequeno, valide r\u00e1pido e escale com clareza de consumo, sem desperd\u00edcio de estrutura. Escalou? Temos um plano com servidor dedicado para voc\u00ea.",
         image: "/gladia/assets/68d3c9a0943562757c628f81_Piggy.avif",
-        imageAlt: "Pricing visual",
+        imageAlt: "Visual de precifica\u00e7\u00e3o",
       },
     ],
   },
   integration: {
     id: "developers",
-    eyebrow: "INTEGRATION",
-    title: "Developer-first experience",
-    description: "Plug. Build. Ship.",
+    eyebrow: "INTEGRA\u00c7\u00c3O",
+    title: "Experi\u00eancia intuitiva\npara colocar no ar r\u00e1pido,\nsem dificuldades.",
+    description:
+      "Conecte sua opera\u00e7\u00e3o em poucos passos e transforme etapas do comercial em a\u00e7\u00f5es autom\u00e1ticas de contato, qualifica\u00e7\u00e3o e recupera\u00e7\u00e3o.",
     action: {
-      href: "https://docs.gladia.io/",
-      label: "Gladia documentation",
+      href: "#developers",
+      label: "Documenta\u00e7\u00e3o da Rebound",
     },
-    background:
-      "/gladia/assets/68d3cb669e507e6076828190_Homepage-bento-developer-bg.avif",
+    background: "/gladia/assets/developer-first-custom.png",
     cards: [
       {
         accent: "violet",
-        title: "Lightweight SDK",
+        title: "Implementa\u00e7\u00e3o r\u00e1pida, sem mexer com c\u00f3digo.",
         description:
-          "Minimal lines of code to make setup fast and painless.",
-        image: "/gladia/assets/68d3ca07eb58dc51ad855766_Code.avif",
-        imageAlt: "SDK visual",
+          "Zero c\u00f3digo para iniciar, testar e colocar em produ\u00e7\u00e3o com velocidade. Voc\u00ea consegue ativar em minutos.",
         logos: [
           {
             name: "Python",
@@ -247,19 +245,15 @@ export const gladiaPageData: GladiaPageData = {
       },
       {
         accent: "cyan",
-        title: "Fast integration",
+        title: "Integra\u00e7\u00e3o r\u00e1pida com suas plataformas de uso",
         description:
-          "REST or WebSocket connections are simple to configure in under a day.",
-        image: "/gladia/assets/68d3ca0755697e879d5a39c0_Link.avif",
-        imageAlt: "Integration visual",
+          "Temos integra\u00e7\u00e3o com v\u00e1rias plataformas e CRM, e tamb\u00e9m criamos uma nova integra\u00e7\u00e3o para seu cen\u00e1rio em poucas horas.",
       },
       {
         accent: "emerald",
-        title: "Telephony ready",
+        title: "Pronto para orquestrar a\u00e7\u00f5es comerciais",
         description:
-          "Designed to integrate seamlessly with top communication platforms.",
-        image: "/gladia/assets/68d3ca07a3e04f2cf47aa3d6_Puzzle.avif",
-        imageAlt: "Telephony visual",
+          "Realiza liga\u00e7\u00f5es e envie mensagens autom\u00e1ticas para reativar leads, recuperar carrinhos, avisar agendamentos e receber novos leads em tempo real.",
         logos: [
           {
             name: "Twilio",
@@ -277,11 +271,9 @@ export const gladiaPageData: GladiaPageData = {
       },
       {
         accent: "amber",
-        title: "Ecosystem native",
+        title: "Arquitetura flex\u00edvel para evoluir",
         description:
-          "Works out-of-the-box with WebRTC, Recall, and more.",
-        image: "/gladia/assets/68d3ca07fbfba9e9c60e0971_Toggle.avif",
-        imageAlt: "Ecosystem visual",
+          "Comece simples e expanda com seguran\u00e7a, sem reescrever toda a opera\u00e7\u00e3o depois.",
         logos: [
           {
             name: "Vapi",
@@ -291,348 +283,542 @@ export const gladiaPageData: GladiaPageData = {
             name: "Pipecat",
             src: "/gladia/assets/68d3f494a4365d47aa09ed0a_Pipecate-simple.svg",
           },
-          {
-            name: "LiveKit",
-            src: "/gladia/assets/68da791fdf72269020b9908d_livekit.svg",
-          },
         ],
       },
     ],
     supportCard: {
-      title: "Direct support",
+      title: "Suporte t\u00e9cnico para acelerar entrega",
       description:
-        "High-touch Slack access for instant help from engineers building the tech.",
-      image: "/gladia/assets/68d3ca070460d658813302d4_Headphones.avif",
-      imageAlt: "Support visual",
+        "Resolva d\u00favidas de implementa\u00e7\u00e3o r\u00e1pido e avance para produ\u00e7\u00e3o com confian\u00e7a. Tamb\u00e9m fazemos implementa\u00e7\u00e3o personalizada.",
     },
   },
   compliance: {
-    title: "Compliance & security",
+    title: "Conformidade e seguran\u00e7a",
     description:
-      "At Gladia, data privacy is non-negotiable. We never use your audio to retrain our models, and we don't believe in charging extra for peace of mind.",
+      "Na Rebound, privacidade de dados \u00e9 inegoci\u00e1vel. Nunca usamos seu \u00e1udio para retreinar nossos modelos e n\u00e3o acreditamos em cobrar a mais por tranquilidade.",
     action: {
-      href: "https://www.gladia.io/compliance-hub",
-      label: "Learn more about our security practices",
+      href: "#perguntas",
+      label: "Saiba mais sobre nossas pr\u00e1ticas de seguran\u00e7a",
     },
     beltImage: "/gladia/assets/69973c5083a93a034c2eac82_compliance-belt.svg",
-    beltImageAlt: "Compliance certifications belt",
+    beltImageAlt: "Faixa de certifica\u00e7\u00f5es de conformidade",
     portrait: "/gladia/assets/66ec619513cb9be4e874c6a3_alexandre-bouju.png",
-    portraitAlt: "Gladia customer portrait",
+    portraitAlt: "Retrato de cliente da Rebound",
     badges: [
       {
         image: "/gladia/assets/68d3f7748f2c432c3bb8c31a_SOC.avif",
-        imageAlt: "SOC badge",
-        label: "AICPA SOC Type 2",
+        imageAlt: "Selo SOC",
+        label: "AICPA SOC Tipo 2",
         shortLabel: "SOC 2",
       },
       {
         image: "/gladia/assets/68d3f774924e4d8b616fdcb0_GDPR.avif",
-        imageAlt: "GDPR badge",
-        label: "GDPR Compliant",
+        imageAlt: "Selo GDPR",
+        label: "Em conformidade com GDPR",
         shortLabel: "GDPR",
       },
       {
         image: "/gladia/assets/68d3f774d6b91d8f3f6d81df_HIPAA.avif",
-        imageAlt: "HIPAA badge",
-        label: "HIPAA Compliant",
+        imageAlt: "Selo HIPAA",
+        label: "Em conformidade com HIPAA",
         shortLabel: "HIPAA",
       },
     ],
   },
   languageSupport: {
     id: "resources",
-    eyebrow: "LANGUAGE SUPPORT",
-    title: "1 provider for any language",
-    description: "Expand globally with a single API. 100+ languages included.",
+    eyebrow: "SUPORTE DE IDIOMAS",
+    title: "Compreens\u00e3o e express\u00e3o perfeitas em +100 idiomas",
+    description:
+      "Entenda nuances, sotaques e inten\u00e7\u00f5es com precis\u00e3o. Responda com clareza e naturalidade em mais de 100 idiomas.",
     action: {
-      href: "https://www.gladia.io/request-demo",
-      label: "Talk to sales",
+      href: "#preco",
+      label: "Assinar Rebound",
     },
     background:
       "/gladia/assets/68d3cd88739f2db230bbbe7d_Homepage-bento-languages-bg.avif",
     cards: [
       {
         accent: "violet",
-        title: "Transcribes in any languages",
+        title: "Transcreve em qualquer idioma",
         description:
-          "With leading accuracy in EN, FR, ES, and IT, with exclusive support for rare languages.",
+          "Com precis\u00e3o de ponta em EN, FR, ES e IT, al\u00e9m de suporte exclusivo para idiomas raros.",
         image: "/gladia/assets/68d3ca078e4cc199eb9b580c_Translate.avif",
-        imageAlt: "Multilingual transcription visual",
+        imageAlt: "Visual de transcri\u00e7\u00e3o multil\u00edngue",
       },
       {
         accent: "cyan",
-        title: "Advanced code-switching",
+        title: "Transição de linguagem avançada",
         description:
-          "Advanced recognition handles natural multilingual conversations without errors.",
+          "Reconhecimento avan\u00e7ado lida com conversas multil\u00edngues naturais sem erros.",
         image: "/gladia/assets/68d3ca07fbfba9e9c60e0971_Toggle.avif",
-        imageAlt: "Code-switching visual",
+        imageAlt: "Visual de transi\u00e7\u00e3o de idioma",
       },
       {
         accent: "emerald",
-        title: "Any-to-any translation",
+        title: "Tradução de qualquer idioma para qualquer idioma",
         description:
-          "Ensures seamless communication across all supported languages.",
+          "Garante comunica\u00e7\u00e3o fluida em todos os idiomas suportados.",
         image: "/gladia/assets/68d3ca070953e0f56bbe41b5_Translation.avif",
-        imageAlt: "Translation visual",
+        imageAlt: "Visual de tradu\u00e7\u00e3o",
       },
     ],
   },
   benchmarks: {
-    eyebrow: "BENCHMARKS",
-    title: "How we compare to alternatives",
+    eyebrow: "COMPARATIVOS",
+    title: "Como nos comparamos com as alternativas",
     description:
-      "Gladia is up to 39% more accurate than leading competitors in major European languages, including English.",
+      "A Rebound \u00e9 at\u00e9 39% mais precisa que concorrentes l\u00edderes nos principais idiomas europeus, incluindo ingl\u00eas.",
     action: {
-      href: "https://www.gladia.io/stt-api-benchmarks",
-      label: "Check our benchmarks",
+      href: "#product",
+      label: "Confira nossos comparativos",
     },
     background:
-      "/gladia/assets/68d39c955ae22f7abd133935_Homepage-bento-benchmarks-bg.avif",
+      "/gladia/assets/homepage-bento-benchmarks-bg-green.avif",
     graphic: "/gladia/assets/679270d0233671e008b8a55a_svgexport-4.svg",
-    graphicAlt: "Benchmark comparison graphic",
+    graphicAlt: "Gr\u00e1fico comparativo",
+  },
+  comparison: {
+    eyebrow: "COMPARATIVO",
+    title: "O que muda quando o follow-up deixa de ser manual",
+    description:
+      "A Rebound fica entre a flexibilidade do time humano e a escala de automações, com voz, contexto e continuidade no mesmo fluxo.",
+    rows: [
+      {
+        criterion: "Velocidade de contato",
+        manual: "Depende da agenda do time e costuma atrasar nos picos.",
+        automation: "Dispara mensagens, mas nem sempre conversa de verdade.",
+        rebound: "Liga no momento certo e continua a conversa pelo WhatsApp.",
+      },
+      {
+        criterion: "Contexto comercial",
+        manual: "Varia por vendedor e exige disciplina no CRM.",
+        automation: "Segue regras fixas e perde nuances da resposta.",
+        rebound: "Usa objetivo, histórico e resultado da ligação para decidir o próximo passo.",
+      },
+      {
+        criterion: "Escala",
+        manual: "Cresce junto com contratação e treinamento.",
+        automation: "Escala envio, mas pode gerar resposta sem continuidade.",
+        rebound: "Roda múltiplas campanhas em paralelo com acompanhamento centralizado.",
+      },
+      {
+        criterion: "Custo",
+        manual: "Custo fixo alto para tarefas repetitivas.",
+        automation: "Pode exigir setup caro e integrações longas.",
+        rebound: "Começa com plano mensal e minutos previsíveis por uso real.",
+      },
+      {
+        criterion: "Passagem para humano",
+        manual: "Já nasce humana, mas consome tempo em contatos frios.",
+        automation: "Frequentemente entrega contexto incompleto.",
+        rebound: "Aciona o humano quando há intenção, objeção ou oportunidade clara.",
+      },
+    ],
   },
   testimonials: {
-    eyebrow: "Rated 4.8 on G2",
-    title: "Why customers choose us",
+    eyebrow: "",
+    title: "Por que os clientes nos escolhem",
     description:
-      "Here's what top-tier voice platform builders say about our product.",
+      "Cinco motivos para transformar contato comercial em continuidade real.",
     background: "/gladia/assets/6839ac6c53d82bf7befb218c_testimonials_bg.webp",
-    caseStudy: {
-      company: "Attention",
-      name: "Matthias Winckenburg",
-      role: "CTO & Founder, Attention",
-      caption: "Watch Attention case study",
-      videoUrl: "https://www.youtube.com/embed/toAcpe0LSpI?start=1",
-    },
     items: [
       {
-        avatar: "/gladia/assets/66ec619513cb9be4e874c6a3_alexandre-bouju.png",
-        company: "Selectra",
-        companyLogo: "/gladia/assets/67013cb9aeea15a9f6e7b6fb_Selectra.svg",
-        name: "Alexandre Bouju",
-        role: "CTO Deputy Manager",
-        quote:
-          "\"There's a lot more than one can get out of audio than just transcription, and Gladia understood that. Feature rollouts are proactive, and anticipate our needs as a platform.\"",
+        title: "Atendimento instant\u00e2neo, antes do lead esfriar",
+        body:
+          "O Rebound App responde no momento certo e reduz o tempo entre interesse e contato. Assim, sua opera\u00e7\u00e3o aproveita melhor cada oportunidade que chega.",
+        contrast:
+          "\u00c9 diferente de abrir o CRM no fim do dia e perceber que os melhores leads ficaram sem resposta.",
       },
       {
-        avatar: "/gladia/assets/66ce0617609e67138b4f1e83_lazarerossillon.jpg",
-        company: "Spoke",
-        companyLogo: "/gladia/assets/67013d0254e7714dce80a7ab_Spoke.svg",
-        name: "Lazare Rossillon",
-        role: "CEO",
-        quote:
-          "\"Gladia has a clear-cut advantage when it comes to European languages. With their API, we acquired new users in countries like Finland and Sweden.\"",
+        title: "Follow-up que acontece sem depender da mem\u00f3ria do time",
+        body:
+          "O app organiza e dispara os pr\u00f3ximos contatos com consist\u00eancia. Menos lead esquecido, menos atraso e mais continuidade no funil.",
+        contrast:
+          "\u00c9 diferente de prometer retorno, o dia correr, e aquela conversa boa simplesmente sumir da rotina.",
       },
       {
-        avatar: "/gladia/assets/66ce05aca96399b5038f4c8c_kojohinson.jpg",
-        company: "VEED",
-        companyLogo: "/gladia/assets/67013ccb6b2dabac3f2ea1e1_Veed.svg",
-        name: "Kojo Hinson",
-        role: "Group Engineering Manager",
-        quote:
-          "\"We are 100% benchmark and evaluation driven. Gladia was one of the best providers selected on merit to transcribe user videos, especially for non-English languages.\"",
+        title: "Conversas mais inteligentes, n\u00e3o s\u00f3 notifica\u00e7\u00f5es autom\u00e1ticas",
+        body:
+          "O Rebound App conduz intera\u00e7\u00f5es com contexto, inten\u00e7\u00e3o e clareza. N\u00e3o \u00e9 s\u00f3 automa\u00e7\u00e3o: \u00e9 continuidade real na jornada comercial.",
+        contrast:
+          "\u00c9 diferente de receber resposta do lead e, ainda assim, a conversa travar porque o sistema n\u00e3o entendeu o que ele quis dizer.",
       },
       {
-        avatar: "/gladia/assets/66ce064ddef6aeb6c523ef4c_jeanpatry.jpg",
-        company: "Mojo",
-        companyLogo: "/gladia/assets/67013d2b380c99d965f77fe9_Mojo.svg",
-        name: "Jean Patry",
-        role: "Co-founder",
-        quote:
-          "\"Having tried numerous speech-to-text solutions, I can confidently say: Gladia's API outshines the rest. Their balance of accuracy, speed, and precise word timings is unparalleled.\"",
+        title: "Visibilidade do que est\u00e1 travando sua convers\u00e3o",
+        body:
+          "Com o Rebound App, voc\u00ea entende onde os contatos param, atrasam ou somem. Isso transforma gargalos invis\u00edveis em decis\u00f5es pr\u00e1ticas de opera\u00e7\u00e3o.",
+        contrast:
+          "\u00c9 diferente de s\u00f3 descobrir que o processo falhou quando a agenda da semana veio mais vazia do que deveria.",
+      },
+      {
+        title: "Escala de atendimento sem perder padr\u00e3o",
+        body:
+          "O app mant\u00e9m velocidade e consist\u00eancia mesmo quando a demanda aumenta. Sua opera\u00e7\u00e3o cresce sem depender de mais esfor\u00e7o manual a cada novo lead.",
+        contrast:
+          "\u00c9 diferente de aumentar a entrada de leads e ver o atendimento virar uma corrida para apagar inc\u00eandio.",
       },
     ],
   },
   useCases: {
-    eyebrow: "use cases",
-    title: "What you can build with our API",
+    eyebrow: "CASOS DE USO",
+    title: "O que voc\u00ea pode fazer com o nosso sistema",
     description:
-      "Powering the next generation of AI assistants and voice agents across industries.",
+      "Ligando todo o seu processo comercial com uma IA que entende cada etapa como um vendedor humano.",
     background:
-      "/gladia/assets/68d3ad6f8f3dfc5310dd5d0a_Homepage-bento-use-cases-bg.avif",
+      "/gladia/assets/homepage-bento-use-cases-bg-green.avif",
     cards: [
       {
         accent: "violet",
-        title: "Customer support",
+        title: "Atendimento e suporte",
         description:
-          "Deliver natural conversations at scale - with agents that answer instantly, never drop a call, and handle thousands of interactions in parallel, inbound and outbound.",
-        kicker: "transcribed 95% faster with Gladia",
+          "Realiza atendimento e suporte com conversas naturais em escala, com agentes que atendem instantaneamente, nunca deixam chamadas ca\u00edrem e lidam com milhares de intera\u00e7\u00f5es em paralelo, de entrada e sa\u00edda.",
+        kicker: "Atendimento em escala com qualidade",
         logo: {
           name: "Aircall",
           src: "/gladia/assets/68d3aea853f47650608c78a7_Aircall.svg",
         },
         link: {
-          href: "https://www.gladia.io/customer-experience",
-          label: "transcribed 95% faster with Gladia",
+          href: "#company",
+          label: "Atendimento em escala com qualidade",
         },
       },
       {
         accent: "violet",
-        title: "Sales enablement",
+        title: "Recupera\u00e7\u00e3o de leads",
         description:
-          "Capture names, emails, and company details across accents and languages, then sync seamlessly into CRMs to supercharge sales teams with top-tier AI assistance.",
-        kicker: "closed more deals globally. Here's how",
+          "Recupere leads parados com fluxos ativos dentro da nossa plataforma ou via integra\u00e7\u00e3o com o CRM do cliente. Ao mover um lead para um status ou etapa espec\u00edfica, a liga\u00e7\u00e3o \u00e9 enviada automaticamente no timing certo.",
+        kicker: "Recupera\u00e7\u00e3o autom\u00e1tica por etapa do CRM",
         logo: {
           name: "Attention",
           src: "/gladia/assets/67b0ce5dbb0e44bc6109ad7c_logo-attention.svg",
         },
         link: {
-          href: "https://www.gladia.io/sales-enablement",
-          label: "closed more deals globally. Here's how",
+          href: "#company",
+          label: "Recupera\u00e7\u00e3o autom\u00e1tica por etapa do CRM",
         },
       },
       {
         accent: "magenta",
-        title: "Note-takers",
+        title: "Veja e analise as liga\u00e7\u00f5es do agente",
         description:
-          "Capture every detail automatically - with real-time or async transcription that tags speakers, generates summaries, and more across all your tools.",
+          "O sistema conta com grava\u00e7\u00e3o da liga\u00e7\u00e3o e an\u00e1lise de sucesso com valida\u00e7\u00e3o, facilitando visualizar quais liga\u00e7\u00f5es atingiram o objetivo, quais n\u00e3o atingiram e por qu\u00ea.",
         link: {
-          href: "https://www.gladia.io/meeting-assistant",
-          label: "How Gladia supports note-takers?",
+          href: "#company",
+          label: "Veja a an\u00e1lise de resultado das liga\u00e7\u00f5es",
         },
       },
       {
         accent: "plum",
-        title: "Financial services",
+        title: "Campanhas de Prospec\u00e7\u00e3o em Massa",
         description:
-          "Run voice agents that can engage customers in sensitive, compliance-heavy contexts, with stable transcription and top numerical accuracy.",
+          "Suba listas de leads e rode prospec\u00e7\u00e3o ativa em escala com liga\u00e7\u00f5es, e-mail e at\u00e9 10 WhatsApps conectados \u00e0 campanha, distribuindo envios para reduzir bloqueios e manter o ritmo comercial.",
         link: {
-          href: "https://www.gladia.io/customer-experience",
-          label: "How Gladia supports financial services?",
+          href: "#company",
+          label: "Rodar prospec\u00e7\u00e3o multicanal",
         },
       },
     ],
   },
-  mission: {
-    title: "Voice is the ultimate interface. We're here to make it real.",
+  finalCta: {
+    title: "Comece com uma campanha de reativação hoje",
     description:
-      "At Gladia, we believe that the future of human-machine interaction is voice. Speaking should be the most natural way to access information, build products, and connect with technology.",
-    action: {
-      href: "https://www.gladia.io/about",
-      label: "Read more",
+      "Escolha uma base parada, defina um objetivo simples e veja em poucos dias quais leads ainda têm intenção real de compra.",
+    primaryAction: {
+      href: "#preco",
+      label: "Ativar minha primeira campanha",
     },
-    background:
-      "/gladia/assets/68d3d44552eec3933d5f9405_56686e4f5a0364387ca1468f0d36b05e_Background_Footer.avif",
+    secondaryAction: {
+      href: "#perguntas",
+      label: "Tirar dúvidas antes",
+    },
   },
-  faq: {
-    title: "All your questions. Answered.",
+  mission: {
+    title: "A voz \u00e9 a interface definitiva. Estamos aqui para torn\u00e1-la real.",
+    description:
+      "Na Rebound, acreditamos que o futuro da intera\u00e7\u00e3o entre humanos e m\u00e1quinas \u00e9 a voz. Falar deve ser a forma mais natural de acessar informa\u00e7\u00f5es, criar produtos e se conectar com a tecnologia.",
+    action: {
+      href: "#perguntas",
+      label: "Ler mais",
+    },
+    background: "/gladia/assets/green-scales-horizontal-left.webp",
+  },
+  objections: {
+    eyebrow: "ANTES DE COMEÇAR",
+    title: "As objeções mais comuns já têm resposta",
+    description:
+      "Antes de ativar uma campanha, normalmente surgem dúvidas sobre voz, integração, controle e passagem para o time humano.",
     items: [
       {
-        question: "What are the key features of Gladia's audio transcription API?",
+        question: "E se a voz parecer robótica?",
         answer:
-          "On top of supporting 100+ languages across both highly accurate asynchronous and real-time transcription, at under 300 milliseconds latency, Gladia also offers a layer of add-ons. These range from custom vocabulary, diarization and sentiment analysis to named entity recognition, word-level timestamps, summarization and more.",
+          "O foco da Rebound é conversa natural, com contexto e entonação adequada ao objetivo da campanha. Você pode testar o áudio antes de escalar.",
       },
       {
-        question: "What languages does Gladia's speech-to-text API support?",
+        question: "E se meu CRM ou plataforma for diferente?",
         answer:
-          "Gladia's Speech-to-Text API supports 100+ languages and accents including english, french, spanish, italian, portuguese, german, dutch, swedish, arabic, hindi, japanese, korean and many more.",
+          "A operação pode começar por planilha, webhook ou integração personalizada. O objetivo é entrar no fluxo atual sem exigir troca de sistema.",
       },
       {
-        question: "How can I get started with implementing Gladia's API in my product?",
+        question: "Quando o humano entra na conversa?",
         answer:
-          "To get started, sign up at app.gladia.io. You can try the product in the playground environment or generate a new API key directly from the dashboard. Full implementation guides are available in the documentation.",
+          "Você define regras de passagem: interesse claro, objeção específica, pedido de proposta, dúvida sensível ou qualquer etapa em que o vendedor deva assumir.",
       },
       {
-        question: "How does Gladia's Speech-to-Text API work?",
+        question: "E WhatsApp, e-mail e bloqueios?",
         answer:
-          "Gladia's Speech-to-Text API lets developers add both asynchronous and real-time transcription, plus audio intelligence add-ons, through a single API that works with existing tech stacks and telephony protocols.",
+          "A Rebound combina canais conforme a campanha e distribui contatos para manter ritmo comercial com mais controle operacional.",
       },
       {
-        question: "Do you offer support for multiple programming languages?",
+        question: "Como evito contatos fora do horário certo?",
         answer:
-          "Absolutely. The API is language-agnostic and can be used with any programming language capable of making HTTP requests. Gladia also provides code examples in multiple languages.",
-      },
-      {
-        question: "What audio formats does Gladia support?",
-        answer:
-          "The API supports a wide range of audio formats and codecs, from WAV and M4A to FLAC and AAC. The full list is available in the documentation under supported files and duration.",
-      },
-      {
-        question: "Is Gladia secure?",
-        answer:
-          "Gladia works with organizations that have highly sensitive data and strict security requirements. The platform is GDPR compliant by default and can also support on-premises or air-gapped hosting depending on your setup.",
+          "As campanhas podem respeitar janelas de ligação, pausas e retomadas, mantendo consistência sem incomodar o lead no momento errado.",
       },
     ],
   },
+  roi: {
+    eyebrow: "CALCULADORA",
+    title: "Quanto dinheiro fica parado na sua base?",
+    description:
+      "Simule rapidamente o potencial de receita recuperada quando leads esquecidos voltam a receber contato no momento certo.",
+    assumptions: [
+      "Estimativa simples para orientar decisão comercial.",
+      "Use seu ticket médio e uma taxa conservadora de recuperação.",
+      "O resultado não inclui ganhos indiretos de velocidade, agenda e produtividade.",
+    ],
+  },
+  faq: {
+    title: "Todas as suas perguntas respondidas.",
+    subtitle: "",
+    categories: {
+      geral: "Geral",
+      ligacoes: "Ligações",
+      campanhas: "Campanhas",
+      escala: "Escala",
+      implantacao: "Implantação",
+    },
+    itemsByCategory: {
+      geral: [
+        {
+          question: "Para que serve o Rebound App?",
+          answer:
+            "O Rebound App automatiza contatos comerciais para reativar leads frios, recuperar carrinhos, confirmar agendamentos e receber novos leads com mais velocidade.",
+        },
+        {
+          question: "Ele é só para empresas grandes?",
+          answer:
+            "Não. O Rebound App também funciona muito bem para pequenas e médias operações. A proposta é pagar pelos minutos falados, sem custo de disparo, evitando gastos altos com automações que custam R$ 3.000+ para fazer algo semelhante.",
+        },
+        {
+          question: "O Rebound App substitui SDR?",
+          answer:
+            "Em muitos casos, sim. O agente consegue reativar leads parados na base, receber novos leads, explicar a oferta, contornar objeções e continuar o contato pelo WhatsApp da empresa. O time humano entra quando for estratégico para fechamento.",
+        },
+        {
+          question: "Que tipo de empresa mais se beneficia?",
+          answer:
+            "Times com volume de leads e necessidade de resposta rápida: e-commerce, educação, serviços, clínicas, imobiliárias e vendas internas.",
+        },
+        {
+          question: "Qual é o principal ganho prático?",
+          answer:
+            "Garante que atendimento, follow-up e demais contatos sejam feitos com qualidade e consistência, enquanto libera os vendedores para focarem nas etapas mais importantes da venda, como negociação e fechamento.",
+        },
+      ],
+      ligacoes: [
+        {
+          question: "O que as ligações automatizadas conseguem fazer?",
+          answer:
+            "Primeiro contato, follow-up, reativação de leads sem resposta e confirmação de interesse. Também podem executar pesquisa de satisfação, lembretes de agendamento e outras rotinas de relacionamento, sempre com foco em avançar o lead no processo.",
+        },
+        {
+          question: "A voz parece robótica?",
+          answer:
+            "Não. A proposta é conversa natural, com entonação humana e contexto de atendimento.",
+        },
+        {
+          question: "Dá para enviar WhatsApp durante a ligação?",
+          answer:
+            "Sim. É possível acionar o envio de WhatsApp no fluxo da própria conversa, conforme as regras da campanha.",
+        },
+        {
+          question: "Dá para confirmar agendamento por ligação?",
+          answer:
+            "Sim. Você pode automatizar lembretes e confirmações para reduzir faltas e melhorar o comparecimento.",
+        },
+        {
+          question: "Como o time assume quando precisa?",
+          answer:
+            "Você define regras de transição para o atendimento humano entrar no momento certo, com o contexto da conversa.",
+        },
+        {
+          question: "Como são feitas as ligações?",
+          answer:
+            "As ligações podem acontecer em tempo real, usando o link de integração (Webhook) dentro da sua plataforma para disparar no momento escolhido (ex.: mudança de etapa no CRM), ou em modo de ligação em massa nas campanhas, a partir de planilhas e bases de leads.",
+        },
+      ],
+      campanhas: [
+        {
+          question: "Quais campanhas posso rodar hoje?",
+          answer:
+            "Campanhas de ligação para reativação de leads, recuperação de oportunidades e avisos de agendamento.",
+        },
+        {
+          question: "Vai ter envio de e-mail e WhatsApp nas campanhas?",
+          answer:
+            "Sim. Em breve, além das ligações, as campanhas também terão envio nativo de e-mail e WhatsApp.",
+        },
+        {
+          question: "Dá para criar campanhas por objetivo?",
+          answer:
+            "Sim. Você pode estruturar campanhas por etapa do funil e tipo de lead, além de controlar as faixas de horário de ligação para cada operação.",
+        },
+        {
+          question: "Consigo acompanhar resultado por campanha?",
+          answer:
+            "Sim. Você acompanha volume de contatos, progresso e evolução por campanha.",
+        },
+        {
+          question: "Posso pausar e retomar sem perder configuração?",
+          answer:
+            "Sim. As campanhas podem ser pausadas e reativadas mantendo a estrutura definida.",
+        },
+      ],
+      escala: [
+        {
+          question: "Aguenta aumento de volume?",
+          answer:
+            "Sim. A plataforma foi pensada para operações com crescimento de contatos e campanhas em paralelo.",
+        },
+        {
+          question: "Preciso aumentar equipe para escalar?",
+          answer:
+            "Não na mesma proporção. A automação absorve a parte operacional e o time foca no fechamento.",
+        },
+        {
+          question: "Dá para operar múltiplas frentes ao mesmo tempo?",
+          answer:
+            "Sim. Você pode manter reativação, recuperação e avisos rodando em paralelo.",
+        },
+        {
+          question: "Como manter padrão de atendimento em escala?",
+          answer:
+            "Com regras, fluxos e objetivos definidos por campanha, garantindo consistência.",
+        },
+        {
+          question: "Escalar aumenta muito o risco operacional?",
+          answer:
+            "A ideia é o contrário: escalar com previsibilidade, monitoramento e ajustes contínuos.",
+        },
+      ],
+      implantacao: [
+        {
+          question: "É difícil começar?",
+          answer:
+            "Não. Na prática, basta criar o agente, conectar um número via SIP Trunk (ou adquirir um número com nossa equipe) e inserir o link de integração dentro da sua plataforma. Se precisar, nosso suporte técnico implementa para você.",
+        },
+        {
+          question: "Quanto tempo leva para colocar no ar?",
+          answer:
+            "Depende do processo atual, mas a entrada costuma ser rápida quando o fluxo comercial está minimamente definido.",
+        },
+        {
+          question: "Preciso de time técnico dedicado?",
+          answer:
+            "Não obrigatoriamente. A operação pode iniciar com apoio guiado e depois ganhar sofisticação.",
+        },
+        {
+          question: "Como o Rebound App entra no processo atual?",
+          answer:
+            "Ele se conecta ao fluxo comercial existente para automatizar etapas sem exigir mudança radical de operação.",
+        },
+        {
+          question: "Como medir resultado no início?",
+          answer:
+            "Acompanhe indicadores como tempo de resposta, taxa de contato, reativação e avanço no funil.",
+        },
+      ],
+    },
+  },
   footer: {
-    strapline: "AI audio infrastructure for companies",
+    strapline: "Infraestrutura de \u00e1udio com IA para empresas",
     badgeImage: "/gladia/assets/6787f8e10cba42b0d0cb9c4d_soc.avif",
-    badgeImageAlt: "Compliance certification badge",
+    badgeImageAlt: "Selo de certifica\u00e7\u00e3o de conformidade",
     columns: [
       {
-        title: "Product",
+        title: "Produto",
         links: [
-          { href: "https://www.gladia.io/real-time", label: "Real-time STT" },
-          { href: "https://www.gladia.io/batch", label: "Batch STT" },
-          { href: "https://www.gladia.io/solaria", label: "Solaria" },
-          { href: "https://www.gladia.io/pricing", label: "Pricing" },
+          { href: "#product", label: "Liga\u00e7\u00f5es por IA" },
+          { href: "#solutions", label: "Campanhas" },
+          { href: "#developers", label: "Integra\u00e7\u00e3o" },
+          { href: "#preco", label: "Pre\u00e7os" },
         ],
       },
       {
-        title: "Use cases",
+        title: "Casos de uso",
         links: [
-          { href: "https://www.gladia.io/customer-experience", label: "Customer experience" },
-          { href: "https://www.gladia.io/sales-enablement", label: "Sales enablement" },
-          { href: "https://www.gladia.io/meeting-assistant", label: "Meeting assistants" },
-          { href: "https://www.gladia.io/media", label: "Media" },
+          { href: "#company", label: "Atendimento e suporte" },
+          { href: "#company", label: "Recupera\u00e7\u00e3o de leads" },
+          { href: "#company", label: "An\u00e1lise de liga\u00e7\u00f5es" },
+          { href: "#company", label: "Campanhas em massa" },
         ],
       },
       {
-        title: "Developers",
+        title: "Desenvolvedores",
         links: [
-          { href: "https://app.gladia.io/", label: "Playground" },
-          { href: "https://docs.gladia.io/", label: "Documentation" },
-          { href: "https://discord.com/invite/gladia", label: "Discord" },
-          { href: "https://status.gladia.io/", label: "Status" },
+          { href: "#preco", label: "Ambiente de testes" },
+          { href: "#developers", label: "Documenta\u00e7\u00e3o" },
+          { href: "#perguntas", label: "Suporte" },
+          { href: "#perguntas", label: "Status" },
         ],
       },
       {
-        title: "Resources",
+        title: "Recursos",
         links: [
-          { href: "https://www.gladia.io/blog", label: "Blog" },
-          { href: "https://www.gladia.io/about", label: "About us" },
+          { href: "#perguntas", label: "Blog" },
+          { href: "#perguntas", label: "Sobre n\u00f3s" },
           {
-            href: "https://www.welcometothejungle.com/en/companies/gladia",
-            label: "Careers",
+            href: "#perguntas",
+            label: "Carreiras",
           },
-          { href: "https://www.gladia.io/security", label: "Security" },
-          { href: "https://trust.gladia.io/", label: "Trust center" },
+          { href: "#perguntas", label: "Seguran\u00e7a" },
+          { href: "#perguntas", label: "Central de confian\u00e7a" },
         ],
       },
       {
-        title: "Company",
+        title: "Empresa",
         links: [
-          { href: "https://www.gladia.io/press", label: "Press" },
-          { href: "https://www.gladia.io/stt-api-benchmarks", label: "Benchmarks" },
-          { href: "https://www.gladia.io/gladia-vs-deepgram", label: "Gladia vs Deepgram" },
-          { href: "https://www.gladia.io/gladia-vs-assemblyai", label: "Gladia vs AssemblyAI" },
-          { href: "https://www.gladia.io/ai-note-takers-guide", label: "AI note-taker guide" },
+          { href: "#perguntas", label: "Imprensa" },
+          { href: "#product", label: "Comparativos" },
+          { href: "#product", label: "Rebound x Deepgram" },
+          { href: "#product", label: "Rebound x AssemblyAI" },
+          { href: "#developers", label: "Guia de assistente de notas com IA" },
         ],
       },
     ],
     legal: [
-      { href: "https://www.gladia.io/legal", label: "Legal notice" },
-      { href: "https://www.gladia.io/privacy", label: "Privacy notice" },
-      { href: "https://www.gladia.io/terms", label: "Terms & conditions" },
+      { href: "#perguntas", label: "Aviso legal" },
+      { href: "#perguntas", label: "Pol\u00edtica de privacidade" },
+      { href: "#perguntas", label: "Termos e condi\u00e7\u00f5es" },
     ],
     social: [
       {
-        href: "https://www.linkedin.com/company/gladia",
+        href: "#perguntas",
         name: "LinkedIn",
         src: "/gladia/assets/66aa763add6db937d66b4907_icon-linkedin.svg",
       },
       {
-        href: "https://discord.com/invite/gladia",
+        href: "#perguntas",
         name: "Discord",
         src: "/gladia/assets/66aa76503ed97ed966ab2b00_icon-discord.svg",
       },
       {
-        href: "https://github.com/gladiaio",
+        href: "#perguntas",
         name: "GitHub",
         src: "/gladia/assets/66aa76598f80e540f83a2a71_icon-github.svg",
       },
       {
-        href: "https://x.com/gladiaio",
+        href: "#perguntas",
         name: "X",
         src: "/gladia/assets/66aa765e5d2c51c12d6e6713_icon-x.svg",
       },

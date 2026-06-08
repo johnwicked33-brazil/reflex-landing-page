@@ -23,7 +23,7 @@ function joinClasses(...classes: Array<string | undefined>) {
 export default function WordLoader({
   words,
   className,
-  durationPerWord = 3.5,
+  durationPerWord = 2.5,
   wordClassName,
 }: WordLoaderProps) {
   const containerRef = useRef<HTMLSpanElement>(null);
@@ -47,31 +47,30 @@ export default function WordLoader({
       }
 
       gsap.set(activeWords, { autoAlpha: 0, overwrite: true, y: 12 });
-      gsap.set(activeWords[0], { autoAlpha: 1, overwrite: true, y: 0 });
 
       const timeline = gsap.timeline({ repeat: -1 });
 
-      activeWords.forEach((currentWord, index) => {
-        const nextWord = activeWords[(index + 1) % activeWords.length];
-
-        timeline.to(currentWord, {
-          autoAlpha: 0,
-          duration: outDuration,
-          ease: "power2.in",
-          y: -12,
-        }, `+=${holdDuration}`);
-
-        timeline.fromTo(
-          nextWord,
-          { autoAlpha: 0, y: 12 },
+      activeWords.forEach((word) => {
+        timeline.to(
+          word,
           {
             autoAlpha: 1,
             duration: inDuration,
             ease: "power2.out",
             y: 0,
           },
-          "<",
         );
+
+        timeline.to(word, { duration: holdDuration, ease: "none" });
+
+        timeline.to(word, {
+          autoAlpha: 0,
+          duration: outDuration,
+          ease: "power2.in",
+          y: -12,
+        });
+
+        timeline.set(word, { y: 12 });
       });
 
       return () => timeline.kill();
@@ -90,6 +89,7 @@ export default function WordLoader({
             }}
             className={joinClasses(
               styles.word,
+              index === 0 ? styles.wordInitial : undefined,
               wordClassName,
             )}
           >
